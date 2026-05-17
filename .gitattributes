@@ -1,0 +1,27 @@
+# Normalize line endings.
+# Without this, Windows checkouts store CRLF in tree objects and Linux
+# checkouts store LF — every commit triggers spurious "LF will be replaced
+# by CRLF" warnings, and Linux deployments end up with shell-script-like
+# files that bash won't run.
+* text=auto eol=lf
+
+# Force LF on files that bash, python, or systemd actually exec on the
+# Linux deployment target. CRLF here breaks them silently.
+*.py text eol=lf
+*.sh text eol=lf
+*.toml text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+
+# Windows-only scripts stay CRLF — the .bat / .ps1 hosts expect it.
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary — never normalize.
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary
+*.zip binary

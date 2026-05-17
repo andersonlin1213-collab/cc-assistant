@@ -1,0 +1,31 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+logs/*.jsonl
+logs/*.log
+logs/*.pid
+logs/*.json
+logs/*.err
+logs/*.out
+logs/_*
+scripts/_*
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Plan 5b: attachments handled by Obsidian Sync, not git
+tasks/_attachments/
+
+# Local dogfood / scratch artifacts (not deployment outputs).
+xiaomi_*.html
+xiaomi_*.json
+.claude/
+
+# Scratch / probe outputs (curl dumps, healthz responses, etc.)
+.tmp_*
+
+# Obsidian per-user plugin binaries — re-installable from Community Plugins.
+tasks/.obsidian/plugins/
+tasks/.obsidian/workspace*.json
