@@ -26,6 +26,6 @@ xiaomi_*.json
 # Scratch / probe outputs (curl dumps, healthz responses, etc.)
 .tmp_*
 
-# Obsidian per-user plugin binaries — re-installable from Community Plugins.
-tasks/.obsidian/plugins/
-tasks/.obsidian/workspace*.json
+# Obsidian per-user state — let each user generate their own when they
+# first open tasks/ as a vault. We don't ship baseline config.
+tasks/.obsidian/
